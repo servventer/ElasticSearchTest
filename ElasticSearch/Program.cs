@@ -18,7 +18,6 @@ namespace ElasticSearch
             var connectionSettings = new ConnectionSettings(new Uri(uri));
             connectionSettings.BasicAuthentication(user, pass);
             var client = new ElasticClient(connectionSettings);
-
             var searchResults = client.Get<Document>(id, g => g
             .Index(index)
             .Type(type)
